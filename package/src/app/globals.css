@@ -30,6 +30,8 @@ body {
   --color-primary: #1C212B;
   --color-secondary: #677084;
   --color-violet: #6A57E3;
+  --color-slate-gray: #9BA2B0;
+  --color-gray-light: #F5F6F9;
 
   --breakpoint-xs: 500px;
 }

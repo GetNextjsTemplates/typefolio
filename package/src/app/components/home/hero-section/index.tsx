@@ -54,7 +54,7 @@ const HeroSection = () => {
                                     href="/contact"
                                     className="inline-block p-0.5 rounded-full bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)]"
                                 >
-                                    <span className="flex items-center gap-3 bg-primary py-2.5 px-5 rounded-full">
+                                    <span className="flex items-center gap-3 bg-primary hover:bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)] py-2.5 px-5 rounded-full">
                                         <Image
                                             src="/images/icon/spark-icon.svg"
                                             alt="spark-icon"
@@ -74,3 +74,4 @@ const HeroSection = () => {
 }
 
 export default HeroSection
+

@@ -1,22 +1,24 @@
-const Education = () => {
-    const educationData = [
-        {
-            date: "Sep 2015 - May 2019",
-            title: "B.F.A. in Graphic Design",
-            subtitle: "Pratt Institute — Brooklyn, NY"
-        },
-        {
-            date: "Mar 2021 - Aug 2021",
-            title: "UX Design Certificate",
-            subtitle: "Google UX Design - Coursera"
-        },
-        {
-            date: "Jan 2020 - Mar 2020",
-            title: "Front-End Web Development Bootcamp",
-            subtitle: "General Assembly — New York, NY"
-        }
-    ];
+"use client";
+import { useEffect, useState } from "react";
 
+const Education = () => {
+    const [educationData, setEducationData] = useState<any>(null);
+    
+        useEffect(() => {
+            const fetchData = async () => {
+                try {
+                    const res = await fetch('/api/page-data')
+                    if (!res.ok) throw new Error('Failed to fetch')
+                    const data = await res.json()
+                    setEducationData(data?.educationData)
+                } catch (error) {
+                    console.error('Error fetching services:', error)
+                }
+            }
+    
+            fetchData()
+        }, [])
+    
     return (
         <section>
             <div className="container">
@@ -28,18 +30,16 @@ const Education = () => {
                     </div>
 
                     <div className="border-t border-primary/10">
-                        <div className="relative max-w-3xl mx-auto py-10 px-4">
-                            {/* Vertical Line */}
-                            <div className="hidden sm:flex absolute left-5 sm:left-[16.9rem] sm:translate-x-1/2 top-0 bottom-0 w-px bg-primary/10" />
+                        <div className="relative max-w-3xl mx-auto px-4 sm:px-0 py-10">
+                            <div className="hidden sm:flex absolute left-5 sm:left-[15.9rem] sm:translate-x-1/2 top-0 bottom-0 w-px bg-primary/10" />
 
                             <div className="relative">
-                                {educationData.map((item, index) => (
+                                {educationData?.map((item:any, index:any) => (
                                     <div
                                         key={index}
                                         className={`relative flex flex-col sm:flex-row sm:items-start gap-4 ${index !== educationData.length - 1 ? "mb-8 sm:mb-16" : ""
                                             }`}
                                     >
-                                        {/* Date */}
                                         <div className="relative pl-8 sm:pl-0 sm:w-64 sm:text-right sm:pr-16">
                                             <p className="ml-2.5 sm:ml-0 text-base font-normal sm:mb-0 leading-relaxed">
                                                 {item.date}
@@ -51,7 +51,6 @@ const Education = () => {
                                             </div>
                                         </div>
 
-                                        {/* Content */}
                                         <div className="flex flex-col gap-2 flex-1 sm:pl-16 ml-2 sm:ml-0">
                                             <h5 className="font-semibold">{item.title}</h5>
                                             <p className="text-primary">{item.subtitle}</p>

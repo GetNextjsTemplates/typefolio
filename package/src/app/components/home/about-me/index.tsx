@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 
 const AboutMe = () => {
     const servicesBedge = ["Graphic Design", "User Experience", "Mobile App Design", "Brand Identity", "Responsive Design", "Prototyping", "Illustration", "Motion Graphics", "Print Design", "UI Development", "Interactive Media"];
@@ -16,9 +17,9 @@ const AboutMe = () => {
                             <div className="flex flex-wrap gap-2 sm:gap-3">
                                 {servicesBedge?.map((value, index) => {
                                     return (
-                                        <div key={index} className="w-fit py-1.5 px-3 border border-primary/10 rounded-lg">
+                                        <Badge variant={"outline"} key={index} className="py-1.5 px-3 rounded-lg">
                                             <p className="text-xs sm:text-sm font-medium text-primary">{value}</p>
-                                        </div>
+                                        </Badge>
                                     )
                                 })}
                             </div>

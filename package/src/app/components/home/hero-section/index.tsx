@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
     const socialIcon = [
@@ -34,7 +35,7 @@ const HeroSection = () => {
                             </div>
                             <div className="flex flex-col gap-2 sm:gap-3 items-center text-center xs:items-start">
                                 <h1>Elena Marsh</h1>
-                                <h5 className="text-violet font-normal">Senior UI & UX Designer</h5>
+                                <p className="text-violet-700 font-normal">Senior UI & UX Designer</p>
                                 <div className="flex items-center gap-2">
                                     <Image src={"/images/icon/map-icon.svg"} alt="map-icon" width={20} height={20} />
                                     <p className="text-primary">Brooklyn, NYC</p>
@@ -50,20 +51,22 @@ const HeroSection = () => {
                                         )
                                     })}
                                 </div>
-                                <Link
-                                    href="/contact"
-                                    className="inline-block p-0.5 rounded-full bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)]"
-                                >
-                                    <span className="flex items-center gap-3 bg-primary hover:bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)] py-2.5 px-5 rounded-full">
-                                        <Image
-                                            src="/images/icon/spark-icon.svg"
-                                            alt="spark-icon"
-                                            width={14}
-                                            height={14}
-                                        />
-                                        <span className="text-sm sm:text-base font-semibold text-white">Get in touch</span>
-                                    </span>
-                                </Link>
+                                <Button asChild className="h-auto rounded-full p-0.5!">
+                                    <Link
+                                        href="#"
+                                        className="inline-block p-0.5 rounded-full bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)]"
+                                    >
+                                        <span className="flex items-center gap-3 bg-primary hover:bg-[linear-gradient(96.09deg,_#9282F8_12.17%,_#F3CA4D_90.71%)] py-2.5 px-5 rounded-full">
+                                            <Image
+                                                src="/images/icon/spark-icon.svg"
+                                                alt="spark-icon"
+                                                width={14}
+                                                height={14}
+                                            />
+                                            <span className="text-sm sm:text-base font-semibold text-white">Get in touch</span>
+                                        </span>
+                                    </Link>
+                                </Button>
                             </div>
                         </div>
                     </div>

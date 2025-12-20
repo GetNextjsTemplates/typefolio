@@ -47,7 +47,7 @@ const ProjectOverview = () => {
 
                                     const content = (
                                         <div className="group flex flex-wrap items-center gap-2">
-                                            <h4 className={`${isComingSoon ? 'text-slate-gray' : 'text-primary'}`}>
+                                            <h4 className={`${isComingSoon ? 'text-muted-foreground' : 'text-primary'}`}>
                                                 {value?.name}
                                             </h4>
                                             {!isComingSoon ? (
@@ -59,8 +59,8 @@ const ProjectOverview = () => {
                                                     className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-all duration-300 ease-in"
                                                 />
                                             ) : (
-                                                <div className="py-1.5 px-3 bg-gray-light rounded-lg">
-                                                    <p className="text-xs md:text-base font-normal text-slate-gray">Coming Soon</p>
+                                                <div className="py-1.5 px-3 bg-muted rounded-lg">
+                                                    <p className="text-xs md:text-base font-normal text-muted-foreground">Coming Soon</p>
                                                 </div>
                                             )}
                                         </div>

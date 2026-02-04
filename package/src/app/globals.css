@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -89,7 +90,7 @@ body {
   }
 
   p {
-    @apply text-base font-normal text-secondary;
+    @apply text-base font-normal text-muted-foreground;
   }
 }
 
@@ -106,7 +107,7 @@ body {
   --secondary: #677084;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: #677084;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
